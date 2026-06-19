@@ -1,0 +1,34 @@
+{
+  "name": "devsink",
+  "version": "0.1.0",
+  "description": "Capture browser console logs and network requests into JSONL files in your codebase. Works with Vite, webpack, Create React App, and plain HTML.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": ["vite","webpack","create-react-app","cra","console","network","logging","debug","devtools"],
+  "bin": { "devsink": "./dist/cli.cjs" },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js", "require": "./dist/index.cjs" },
+    "./vite": { "types": "./dist/vite.d.ts", "import": "./dist/vite.js", "require": "./dist/vite.cjs" },
+    "./webpack": { "types": "./dist/webpack.d.ts", "import": "./dist/webpack.js", "require": "./dist/webpack.cjs" },
+    "./standalone": { "types": "./dist/standalone.d.ts", "import": "./dist/standalone.js", "require": "./dist/standalone.cjs" }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": { "vite": ">=4" },
+  "peerDependenciesMeta": { "vite": { "optional": true } },
+  "devDependencies": {
+    "@types/node": "^20.19.43",
+    "tsup": "^8.0.0",
+    "typescript": "^5.4.0",
+    "vite": "^5.0.0"
+  },
+  "engines": { "node": ">=18" }
+}
