@@ -15,7 +15,15 @@
     "./webpack": { "types": "./dist/webpack.d.ts", "import": "./dist/webpack.js", "require": "./dist/webpack.cjs" },
     "./standalone": { "types": "./dist/standalone.d.ts", "import": "./dist/standalone.js", "require": "./dist/standalone.cjs" }
   },
-  "files": ["dist"],
+  "files": ["dist", "assets"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prafulnigam/devsink.git"
+  },
+  "bugs": {
+    "url": "https://github.com/prafulnigam/devsink/issues"
+  },
+  "homepage": "https://github.com/prafulnigam/devsink#readme",
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
